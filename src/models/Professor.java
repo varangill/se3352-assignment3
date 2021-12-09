@@ -1,4 +1,5 @@
 package models;
 
-public class Professor {
+public class Professor extends User{
+
 }
