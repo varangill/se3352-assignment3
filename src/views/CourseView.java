@@ -35,5 +35,7 @@ public class CourseView { //a general view for the course, including a list of t
 
     public void show() {
         //Display or refresh the view of the course
+        String titles = this.getController().getPageTitles();
+        //display the page titles
     }
 }

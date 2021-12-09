@@ -1,32 +1,42 @@
 package models;
 
-public class User {
-    private String studentNumber;
-    private String StudentName;
-    private String professorNumber;
-    private Professor ProfessorName;
+import java.util.ArrayList;
 
-    public User(String studentID, String name, String professorID, Professor professor) {
-        this.studentNumber = studentID;
-        this.StudentName = name;
-        this.professorNumber = professorID;
-        this.ProfessorName = professor;
+public class User { //user is the superclass for Professor and Student
+    private String number;
+    private String name;
+    private ArrayList<Course> courses;
+    private ArrayList<Page> pages; //students can have 1 page per course, profs can have any number
+
+    public ArrayList<Page> getPages() {
+        return pages;
     }
-    public String getstudentNumber() {return studentNumber;}
 
-    public void setStudentNumber(String studentNumber) {this.studentNumber = studentNumber;}
+    public void setPages(ArrayList<Page> pages) {
+        this.pages = pages;
+    }
 
-    public String getStudentName() {return StudentName;}
+    public String getNumber() {
+        return number;
+    }
 
-    public void setStudentName(String StudentName) {this.StudentName = StudentName;}
+    public ArrayList<Course> getCourses() {
+        return courses;
+    }
 
-    public String getprofessorNumber() {return professorNumber;}
+    public void setCourses(ArrayList<Course> courses) {
+        this.courses = courses;
+    }
 
-    public void SetprofessorNumber(String professorNumber) {this.professorNumber = professorNumber;}
+    public void setNumber(String number) {
+        this.number = number;
+    }
 
-    public Professor getProfessorName() {return ProfessorName;}
+    public String getName() {
+        return name;
+    }
 
-    public void setProfessorName(Professor ProfessorName) {this.ProfessorName = ProfessorName;}
-
-   
+    public void setName(String name) {
+        this.name = name;
+    }
 }

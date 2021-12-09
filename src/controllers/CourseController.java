@@ -10,6 +10,7 @@ public class CourseController {
         this.model = model;
         this.view = view;
         this.view.setController(this); //set the view to this
+        this.view.setModel(model);
         view.show();
     }
 
@@ -25,6 +26,14 @@ public class CourseController {
             model.setCourseName(update);
         }
         view.show(); //refresh model upon update
+    }
+
+    public String getPageTitles() { //one thing the View needs is the list of pages to display
+        String titles = "";
+        for (int i = 0; i < this.getModel().getPages().size(); i++) {
+            titles += this.getModel().getPages().get(i).getPageName(); //get every page contained in the selected course and return it to the view to display page names
+        } //in an actual implementation this would include links to the
+        return titles;
     }
 
     public Course getModel() {

@@ -3,17 +3,19 @@ package models;
 import java.util.ArrayList;
 
 public class Page {
-    private String pageName;
+    private String pageName; //generic page info
     private String pageNumber;
     private Student pageOwner;
+    private Course course; //each page belongs to a course
     private ArrayList<Comment> comments;
     private RevisionHistory history;
     private ArrayList<Student> editors; //editors are other students the owner has granted permission to edit
     private String content; //page content would be HTML of the page
 
-    public Page(String name, String number, Student owner) {
+    public Page(String name, String number, Student owner, Course course) {
         this.pageName = name;
         this.pageNumber = number;
+        this.course = course;
         this.pageOwner = owner;
         this.comments = new ArrayList<Comment>();
         this.editors = new ArrayList<Student>();
